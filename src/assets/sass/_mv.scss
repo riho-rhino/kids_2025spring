@@ -1,0 +1,118 @@
+@use './_reset';
+@use './_mixin' as *;
+@use './_common' as c;
+
+body{
+    &.start{
+        .sp_logo{
+            animation: oplogo 2s ease forwards;
+        }
+        .ttl{
+            opacity: 1;
+        }
+        .hamburger_menu{
+            opacity: 1;
+        }
+    }
+}
+
+.header{
+    width: 100%;
+    position: relative;
+    .ttl{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        opacity: 0;
+        transition:opacity 1s 1.5s ease-in;
+        line-height: 1;
+        text-align: center;
+        color: c.$pink;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+    h1{ 
+        font-size: calc(55 / c.$spw * 100vw);
+        font-weight: 500;
+        @include pc{
+            font-size: min(calc(55 / c.$pcw * 100vw),22.5px);
+        }
+    }
+    h2{
+        padding-top: calc(26 / c.$spw) * 100%;
+        font-size: calc(33 / c.$spw * 100vw);
+        font-weight: 500;
+        @include pc{
+            font-size: min(calc(33 / c.$pcw * 100vw),16.5px);
+        }
+    }
+
+    .sp_logo{
+        color: c.$pink;
+        position: absolute;
+        width: calc(190 / c.$spw) * 100%;
+        top: 0;
+        left: 0;
+        margin: calc(50 / c.$spw) * 100% 0 0 calc(90 / c.$spw) * 100%;
+        opacity: 0;
+        white-space: nowrap;
+        @include pc{
+            display: none;
+        }
+    }
+}
+
+
+
+@keyframes oplogo {
+    0%{
+        opacity: 0;
+    }
+    40%,80%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+
+}
+
+.lead_wrap{
+    margin-top: calc(89 / c.$spw) * 100%;
+    margin-left: calc(110.58 / c.$spw) * 100%;
+    display: block;
+    @include pc{
+        display: flex;
+        vertical-align: top;
+        align-items: first baseline;
+        gap: calc(207 / c.$main) * 100%;
+        justify-content: center;
+        margin-left:0;
+        margin-top: calc(103 / c.$main) * 100%;
+    }
+    .description{
+        line-height: 1;
+        font-size: calc(35 / c.$spw * 100vw);
+        @include pc{
+            font-size: min(calc(40 / c.$pcw * 100vw),20px);
+        }
+    }
+    .ja_lead{
+        margin-top: calc(41 / c.$spw) * 100%;
+        line-height: calc(40 / 27);
+        font-size: calc(27 / c.$spw * 100vw);
+        @include pc{
+            font-size: min(calc(27 / c.$pcw * 100vw),13.5px);
+        }
+    }
+    .en_lead{
+        font-size: calc(20.91 / c.$spw * 100vw);
+        line-height: calc(35.1 / 26.57);
+        margin-top: calc(26.57 / c.$spw) * 100%;
+        @include pc{
+            font-size: min(calc(25 / c.$pcw * 100vw),12.5px);
+        }
+    }
+}
+

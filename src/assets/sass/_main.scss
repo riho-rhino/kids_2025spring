@@ -1,0 +1,222 @@
+@use './_reset';
+@use './_mixin' as *;
+@use './_common' as c;
+
+.sec{
+    width: 100%;
+    .ph_wrap{
+        position: relative;
+    }
+    .num{
+        font-weight: 400;
+        color: c.$pink;
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: calc(35 / c.$spw * 100vw);
+        line-height: 1;      
+        padding-top: calc(49 / c.$spw) * 100%;  
+        margin-left: calc(52 / c.$spw) * 100%;  
+        z-index: 40;
+        opacity: 1;
+        transition: opacity .5s ease;
+        @include pc{
+            font-size: calc(48 / c.$pcw * 100vw);
+        }
+        &.fadeout{
+            opacity: 0;
+        }
+    }
+
+    .look_ph{
+        line-height: 0;
+    }
+    .item_detail{
+        margin-top: calc(48.3 / c.$spw) * 100%;  
+        margin-left: calc(50.26 / c.$spw) * 100%;  
+        @include pc{
+            margin-top: calc(78.3 / c.$main) * 100%;  
+        }
+        p{
+            a{
+                color: #000;
+                font-size: calc(27 / c.$spw * 100vw);
+                line-height: calc(55 / 32);
+                color: c.$pink;
+                @include pc{
+                    font-size: calc(32 / c.$pcw * 100vw);
+                }
+            }
+        }
+        .shopnow{
+            padding-top: calc(35 / c.$spw) * 100%;
+            font-size: calc(27 / c.$spw * 100vw);
+            line-height: 1;
+            @include pc{
+                font-size: calc(33 / c.$pcw * 100vw);
+                padding-top: calc(35 / c.$main) * 100%;
+            }
+            span{
+                display: block;
+                padding-bottom: calc(12 / c.$spw) * 100%;
+                text-decoration:underline wavy #FF56D2 1px;
+                text-underline-offset: 4px;
+            }
+        }
+    }
+}
+
+
+.sec_1{
+    margin-top: calc(160.5 / c.$spw) * 100%;
+    @include pc{
+        margin-top: calc(180.5 / c.$main) * 100%;
+
+    }
+    .look_ph{
+        position: sticky;
+        top: 0;
+    }
+
+    .look1-2{
+        z-index: 20;
+    }   
+    .look1-3{
+        z-index: 30;
+        .look1-right{
+            width: calc(390 / c.$spw) * 100%;
+            margin: 0 0 0 auto;
+            line-height: 0;
+        }
+        .look1-left{
+            width: calc(390 / c.$spw) * 100%;
+            line-height: 0;
+        }
+    }   
+}
+
+
+.sec_2{
+    margin-top: calc(104.5 / c.$spw) * 100%;
+    .look2_wrap{
+        position: relative;
+        padding-bottom: calc(402.2 / c.$spw) * 100%;
+    }
+    .look2-1{
+        width: 100%;
+        margin: 0 auto;
+    }     
+    .look2-2{
+        width: calc(530.94 / c.$spw) * 100%;
+        margin: calc(56 / c.$spw) * 100% 0 0 calc(48 / c.$spw) * 100%;
+    }     
+    .look2-3{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: calc(355 / c.$spw) * 100%;
+    }     
+    .item_detail{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin:0 0 calc(161.6 / c.$spw) * 100% calc(78.9 / c.$spw) * 100%;
+    }
+}
+
+
+.sec_3{
+    
+    margin-top: calc(104.5 / c.$spw) * 100%;
+    .look_ph{
+        position: sticky;
+        top: 0;
+    }
+    .look3-1{
+        width: 100%;
+        margin: 0 auto;
+    }   
+    .look3-2{
+        width: calc(528 / c.$spw) * 100%;
+
+    }   
+      
+}
+
+
+
+.sec_4{
+    margin-top: calc(110 / c.$spw) * 100%;
+    .look4-1{
+        width: calc(592 / c.$spw) * 100%;
+        margin: 0 auto;
+    }     
+    .flex{
+        display: flex;
+        margin-top: calc(85.3 / c.$spw) * 100%;
+        gap: 2px;
+    }   
+    .look4-movie{
+        width: calc(550 / c.$spw) * 100%;
+        margin: calc(85.2 / c.$spw) * 100% auto 0;
+    }
+}
+
+.sec_5{
+    margin-top: calc(81 / c.$spw) * 100%;
+    .look_ph{
+        position: sticky;
+        top: 0;
+    }
+    .look5-3{
+        width: calc(500 / c.$spw)* 100%;
+        margin: 0 0 0 auto;
+    }
+}
+
+.sec_6{
+    margin-top: calc(141 / c.$spw) * 100%;
+    .look_ph{
+        position: sticky;
+        top: 0;
+    }
+    
+    .look6-2{
+        padding-top: calc(10 / c.$spw) * 100%;
+    }  
+}
+.sec_7{
+    margin-top: calc(124 / c.$spw) * 100%;
+    .look_ph{
+        position: sticky;
+        top: 0;
+    }
+
+    .look7-4{
+        width: calc(510 / c.$spw) * 100%;
+        margin: calc(85.7 / c.$spw) * 100% auto 0;
+    }
+
+}
+
+
+.sec_8{
+    .num{
+        padding-top: calc(158.7 / c.$spw) * 100%;  
+        margin-left: calc(44.6 / c.$spw) * 100%;  
+    }
+    .ph_wrap{
+        padding-top: calc(130 / c.$spw) * 100%;
+    }
+}
+
+.caption{
+    font-size: calc(20 / c.$spw * 100vw);
+    display: block;
+    line-height: 1;
+    @include pc{
+        display: inline;
+        font-size: calc(25 / c.$pcw * 100vw);
+        
+    }
+}
