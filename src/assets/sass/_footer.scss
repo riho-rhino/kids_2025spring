@@ -4,7 +4,7 @@
 
 
 .footer{
-    margin-top: calc(124 / c.$spw) * 100%;
+    margin-top: calc(90.5 / c.$spw) * 100%;
     overflow: hidden;
 }
 
@@ -26,7 +26,7 @@
         position: relative;
         display: block;
         width: calc(406.9 / c.$spw) * 100%;
-        margin: calc(84.5 / c.$spw) * 100% auto 0;
+        margin: 0 auto;
         border-radius: 30px;
         border: solid 1px c.$pink;
         line-height: 1;

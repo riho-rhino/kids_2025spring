@@ -21,7 +21,10 @@ function tick(time) {
 async function opning() {
     $body.addClass('noscroll');
     $body.addClass('start');
-    await tick(1000);
+    await tick(500);
+    $('.header').addClass('start')
+    $('.pc-wrap').addClass('start')
+    $('.pc-anchor_wrap').addClass('start')
     $body.removeClass('noscroll');
     
 }

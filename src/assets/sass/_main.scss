@@ -156,7 +156,7 @@
 
 
 .sec_2{
-    margin-top: calc(100 / c.$spw) * 100%;
+    margin-top: calc(119 / c.$spw) * 100%;
     .look2_wrap{
         position: relative;
         padding-bottom: calc(402.2 / c.$spw) * 100%;
@@ -185,7 +185,7 @@
 
 .sec_3{
     
-    margin-top: calc(100.5 / c.$spw) * 100%;
+    margin-top: calc(119 / c.$spw) * 100%;
     .look_ph{
         position: sticky;
         top: 0;
@@ -196,7 +196,7 @@
 
 
 .sec_4{
-    margin-top: calc(100 / c.$spw) * 100%;
+    margin-top: calc(137 / c.$spw) * 100%;
     .look4-1{
         width: calc(592 / c.$spw) * 100%;
         margin: 0 auto;
@@ -222,10 +222,13 @@
         width: calc(500 / c.$spw)* 100%;
         margin: 0 0 0 auto;
     }
+    .caption{
+        display: inline;
+    }
 }
 
 .sec_6{
-    margin-top: calc(141 / c.$spw) * 100%;
+    margin-top: calc(115 / c.$spw) * 100%;
     .look_ph{
         position: sticky;
         top: 0;
@@ -236,13 +239,16 @@
     }  
 }
 .sec_7{
-    margin-top: calc(124 / c.$spw) * 100%;
-    margin-bottom: calc(189 / c.$spw) * 100%;
+    margin-top: calc(89.5 / c.$spw) * 100%;
+    margin-bottom: calc(185.4 / c.$spw) * 100%;
     .num{
         @include pc{
-            position: inherit;
-            padding-top: 0;
-            padding-bottom: calc(33.5 / c.$main) * 100%;
+            padding-top: calc(10 / c.$main) * 100%;
+        }
+    }
+    .ph_wrap{
+        @include pc{
+            padding-top: calc(90 / c.$main) * 100%;
         }
     }
     .look_ph{
@@ -253,6 +259,9 @@
     .look7-4{
         width: calc(510 / c.$spw) * 100%;
         margin: calc(85.7 / c.$spw) * 100% auto 0;
+    }
+    .caption{
+        display: inline;
     }
 
 }
@@ -275,23 +284,27 @@
         
         &.border{
             animation: txt-right 10s infinite linear 1s both;
-            font-size: calc(38 / c.$spw * 100vw);
+            font-size: calc(45 / c.$spw * 100vw);
             @include pc{
                 font-size: min(calc(55 / c.$pcw * 100vw),22.5px);
             }
         }
         &.yuw{
             animation: txt-left 10s infinite linear 1s both;
-            font-size: calc(33 / c.$spw * 100vw);
+            font-size: calc(42 / c.$spw * 100vw);
             padding-bottom: 2px;
             @include pc{
-                font-size: calc(29 / c.$pcw * 100vw);
+                font-size: min(calc(45 / c.$pcw * 100vw),22.5px);
             }
         }
     }
     .footer_movie{
         width: calc(640 / c.$spw) * 100%;
-        margin: calc(24/ c.$spw) * 100% auto;
+        margin: calc(46/ c.$spw) * 100% auto;
+        @include pc{
+            margin: calc(62.35/ c.$spw) * 100% auto;
+
+        }
     }
     
     @keyframes txt-left {

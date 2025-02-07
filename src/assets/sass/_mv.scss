@@ -7,9 +7,6 @@ body{
         .sp_logo{
             animation: oplogo 2s ease forwards;
         }
-        .ttl{
-            opacity: 1;
-        }
         .hamburger_menu{
             opacity: 1;
         }
@@ -19,11 +16,15 @@ body{
 .header{
     width: 100%;
     position: relative;
-    // height: 100vh;
-    // .mv_ph{
-    //     height: 100vh;
-    //     object-fit: cover;
-    // }
+    &.start{
+        .ttl{
+            opacity: 1;
+        }
+        
+        .mv_txt{
+            opacity: 1;
+        }
+    }
     
     .ttl{
         position: absolute;
@@ -31,36 +32,42 @@ body{
         left: 50%;
         transform: translate(-50%,-50%);
         opacity: 0;
-        transition:opacity 1s 1.5s ease-in;
+        transition:opacity 1s 1s ease;
         line-height: 1;
         text-align: center;
         color: c.$pink;
         font-weight: 500;
         white-space: nowrap;
+        @include pc{
+            transition:opacity 1s ease;
+        }
     }
     h1{ 
         font-size: calc(55 / c.$spw * 100vw);
         font-weight: 500;
         @include pc{
-            font-size: min(calc(55 / c.$pcw * 100vw),22.5px);
+            font-size: min(calc(65 / c.$pcw * 100vw),32.5px);
         }
     }
     h2{
-        padding-top: calc(26 / c.$spw) * 100%;
+        padding-top: calc(24.7 / c.$spw) * 100%;
         font-size: calc(33 / c.$spw * 100vw);
         font-weight: 500;
         @include pc{
-            font-size: min(calc(33 / c.$pcw * 100vw),16.5px);
+            padding-top: calc(36.67 / c.$main) * 100%;
+            font-size: min(calc(40 / c.$pcw * 100vw),20px);
         }
     }
 
     .sp_logo{
+        font-size: calc(55 / c.$spw * 100vw);
         color: c.$pink;
         position: absolute;
-        width: calc(190 / c.$spw) * 100%;
-        top: 0;
-        left: 0;
-        margin: calc(50 / c.$spw) * 100% 0 0 calc(90 / c.$spw) * 100%;
+        line-height: 1;
+        font-weight: 500;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
         opacity: 0;
         white-space: nowrap;
         @include pc{
@@ -68,11 +75,16 @@ body{
         }
     }
     .mv_txt{
+        opacity: 0;
+        transition: opacity 1s 2s ease-in;
         position: absolute;
         bottom: 0;
         right: 0;
         width: calc(25.33 / c.$spw) * 100%;
         margin: 0 calc(22.5 / c.$spw) * 100% calc(43.5 / c.$spw) * 100%;
+        @include pc{
+            transition:opacity 1s 1s ease;
+        }
     }
 }
 
@@ -92,8 +104,8 @@ body{
 }
 
 .lead_wrap{
-    margin-top: calc(89 / c.$spw) * 100%;
-    margin-left: calc(110.58 / c.$spw) * 100%;
+    margin-top: calc(87 / c.$spw) * 100%;
+    margin-left: calc(75.94 / c.$spw) * 100%;
     display: block;
     color: c.$pink;
     @include pc{
@@ -103,11 +115,10 @@ body{
         gap: calc(207 / c.$main) * 100%;
         justify-content: center;
         margin-left:0;
-        margin-top: calc(103 / c.$main) * 100%;
+        margin-top: calc(138.7 / c.$main) * 100%;
         
     }
     .description{
-        line-height: 1;
         font-size: calc(35 / c.$spw * 100vw);
         font-weight: 500;
         @include pc{
