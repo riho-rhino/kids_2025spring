@@ -2,10 +2,6 @@ import $ from "jquery"
 // swiper
 import Swiper from 'swiper';
 import { Autoplay} from 'swiper/modules';
-// GSAP
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
 
 
 var $win = $(window);
@@ -86,19 +82,21 @@ $(window).on('load', function () {
 });
 
 
-gsap.utils.toArray(".fadein").forEach((element) => {
-    gsap.to(element, {
-      scrollTrigger: {
-        trigger: element,
-        start: "top 70%",
-        toggleClass: {
-          targets: element,
-          className: "in",
-        },
-        once: true,
-      },
-    });
-  });
+$(window).on("scroll", function() {
+        var fadeInElements = $(".fadein");
+        var windowHeight = $(window).height();
+        var scrollTop = $(this).scrollTop();
+        
+        fadeInElements.each(function() {
+            var element = $(this);
+            var offset = element.offset().top;
+            if (scrollTop + windowHeight * 0.7 > offset && !element.hasClass("in")) {
+                element.addClass("in"); 
+            }
+        });
+});
+
+
 
 
   function styleOn() {
@@ -145,3 +143,50 @@ $('.anchor_link a').on('click', function () {
 
 
 
+// videoの再生
+$(function () {
+    function playVideos(videos) {
+        const startPosition = $(window).scrollTop() + $(window).height() * 0.8;
+        videos.each(function(index) {
+            if(startPosition > $(this).offset().top) {
+                $(this).get(0).play();
+            }
+        });
+    }
+    $(window).on('load', function() {
+        const videos = $('.video_wrapper > video');
+        if(videos.length) {
+            playVideos(videos);
+            $(window).on('scroll', function() {
+                playVideos(videos);
+            });
+        }
+    });
+  });
+
+// videoの再生
+
+if (document.querySelector('.js-video-trigger video') !== null) {
+    document.querySelector('.js-video-trigger video').load();
+  }
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    var video;
+    // document.querySelector('.js-video-trigger video').addEventListener 'click', ()=>
+    //   console.log('sdfasdfasdf')
+    video = document.querySelector('.js-video-trigger video');
+    video.addEventListener('click', () => {
+      if (video.muted) {
+        video.muted = false;
+        return video.classList.add('unmuted');
+      } else {
+        video.muted = true;
+        return video.classList.remove('unmuted');
+      }
+    });
+    window.addEventListener('load', () => {
+      return document.querySelector('body').classList.add('init');
+    });
+  });
+  
+  

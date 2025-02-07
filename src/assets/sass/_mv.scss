@@ -19,6 +19,12 @@ body{
 .header{
     width: 100%;
     position: relative;
+    // height: 100vh;
+    // .mv_ph{
+    //     height: 100vh;
+    //     object-fit: cover;
+    // }
+    
     .ttl{
         position: absolute;
         top: 50%;
@@ -61,6 +67,13 @@ body{
             display: none;
         }
     }
+    .mv_txt{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: calc(25.33 / c.$spw) * 100%;
+        margin: 0 calc(22.5 / c.$spw) * 100% calc(43.5 / c.$spw) * 100%;
+    }
 }
 
 
@@ -82,6 +95,7 @@ body{
     margin-top: calc(89 / c.$spw) * 100%;
     margin-left: calc(110.58 / c.$spw) * 100%;
     display: block;
+    color: c.$pink;
     @include pc{
         display: flex;
         vertical-align: top;
@@ -90,10 +104,12 @@ body{
         justify-content: center;
         margin-left:0;
         margin-top: calc(103 / c.$main) * 100%;
+        
     }
     .description{
         line-height: 1;
         font-size: calc(35 / c.$spw * 100vw);
+        font-weight: 500;
         @include pc{
             font-size: min(calc(40 / c.$pcw * 100vw),20px);
         }
@@ -107,7 +123,7 @@ body{
         }
     }
     .en_lead{
-        font-size: calc(20.91 / c.$spw * 100vw);
+        font-size: calc(24 / c.$spw * 100vw);
         line-height: calc(35.1 / 26.57);
         margin-top: calc(26.57 / c.$spw) * 100%;
         @include pc{

@@ -4,7 +4,7 @@
 
 body{
     &.start{
-        .yuw_logo,
+        .kids_logo,
         .pc-anchor_wrap,
         .pc_txt{
             opacity: 1;
@@ -12,16 +12,28 @@ body{
     }
 }
 
-.yuw_logo{
+.kids_logo{
     opacity: 0;
     transition: opacity 1s 2s ease-in;
     position: fixed;
     z-index: 40;
     top: 0;
     left: 0;
-    width: calc(195 / c.$pcw) * 100%;
-    max-width: 92.5px;
+    font-size: min(calc(72 / c.$pcw * 100vw), 36px);
     margin: calc(104 / c.$pcw) * 100% 0 0 calc(107 / c.$pcw) * 100%;
+    white-space: nowrap;
+    color: c.$pink;
+    font-weight: 400;
+}
+.line{
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    height: 1px;
+    background: c.$pink;
 }
 
 
@@ -77,22 +89,21 @@ body{
         white-space: nowrap;
         li{
             margin-bottom: 28.5px;
-            position: relative;
-            padding-bottom: 4px;
-            
             &:last-of-type{
                 margin-bottom: 0;
             }
             a{
                 color: #000;
-            }
-            .wave{
-                position: absolute;
-                width: 100%;
-                bottom: 0;
-                left: 0;
-                clip-path: inset(0 100% 0 0);
-                transition: all .4s ease;
+                position: relative;
+                .wave{
+                    position: absolute;
+                    width: 100%;
+                    bottom: 0;
+                    left: 0;
+                    clip-path: inset(0 100% 0 0);
+                    transition: all .4s ease;
+                    margin-bottom: -6px;
+                }
             }
 
         }

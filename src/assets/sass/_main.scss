@@ -15,13 +15,13 @@
         left: 0;
         font-size: calc(35 / c.$spw * 100vw);
         line-height: 1;      
-        padding-top: calc(49 / c.$spw) * 100%;  
-        margin-left: calc(52 / c.$spw) * 100%;  
+        padding-top: calc(35 / c.$spw) * 100%;  
+        margin-left: calc(49 / c.$spw) * 100%;  
         z-index: 40;
         opacity: 1;
         transition: opacity .5s ease;
         @include pc{
-            font-size: calc(48 / c.$pcw * 100vw);
+            font-size: min(calc(55 / c.$pcw * 100vw),27.5px);
         }
         &.fadeout{
             opacity: 0;
@@ -34,41 +34,101 @@
     .item_detail{
         margin-top: calc(48.3 / c.$spw) * 100%;  
         margin-left: calc(50.26 / c.$spw) * 100%;  
+        font-weight: 400;
         @include pc{
             margin-top: calc(78.3 / c.$main) * 100%;  
         }
         p{
+            color: c.$pink;
             a{
-                color: #000;
+                color: c.$pink;
                 font-size: calc(27 / c.$spw * 100vw);
                 line-height: calc(55 / 32);
                 color: c.$pink;
                 @include pc{
-                    font-size: calc(32 / c.$pcw * 100vw);
+                    font-size: min(calc(32 / c.$pcw * 100vw),16px);
                 }
             }
         }
+
+
         .shopnow{
             padding-top: calc(35 / c.$spw) * 100%;
             font-size: calc(27 / c.$spw * 100vw);
             line-height: 1;
             @include pc{
-                font-size: calc(33 / c.$pcw * 100vw);
+                font-size: min(calc(33 / c.$pcw * 100vw),16.2px);
                 padding-top: calc(35 / c.$main) * 100%;
             }
-            span{
+            &:hover{
+                .shop{
+                    .wave{
+                        animation: waveAnime .5s forwards;
+                    }
+                }
+                .arrow{
+                    transform: translateX(8px);
+                }
+            }
+            a{
+                color: c.$pink;
+                position: relative;
+                display: flex;
+                vertical-align: middle;
+                align-items: center;
+                gap: 5px;
+                .arrow{
+                    display: block;
+                    position: relative;
+                    width: calc(29.27 / c.$spw) * 100%;
+                    height: 1px;
+                    background: c.$pink;
+                    transform: translateX(0);
+                    transition: transform .5s ease;
+
+                    &::before,
+                    &::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    width: 7px;
+                    height: 1px;
+                    border-radius: 9999px;
+                    background-color: c.$pink;
+                    transform-origin: 100% 50%;
+                    }
+
+                    &::before {
+                    transform: translateY(-50%) rotate(40deg);
+                    }
+
+                    &::after {
+                    transform: translateY(-50%) rotate(-40deg);
+                    }
+                }
+            }
+            
+            .shop{
                 display: block;
-                padding-bottom: calc(12 / c.$spw) * 100%;
-                text-decoration:underline wavy #FF56D2 1px;
-                text-underline-offset: 4px;
+                position: relative;
+                .wave{
+                    position: absolute;
+                    width: 100%;
+                    bottom: 0;
+                    left: 0;
+                    margin-bottom: -4px;
+                    clip-path: inset(0);
+                }
             }
         }
     }
 }
 
 
+
 .sec_1{
-    margin-top: calc(160.5 / c.$spw) * 100%;
+    margin-top: calc(132.5 / c.$spw) * 100%;
     @include pc{
         margin-top: calc(180.5 / c.$main) * 100%;
 
@@ -77,7 +137,6 @@
         position: sticky;
         top: 0;
     }
-
     .look1-2{
         z-index: 20;
     }   
@@ -97,15 +156,12 @@
 
 
 .sec_2{
-    margin-top: calc(104.5 / c.$spw) * 100%;
+    margin-top: calc(100 / c.$spw) * 100%;
     .look2_wrap{
         position: relative;
         padding-bottom: calc(402.2 / c.$spw) * 100%;
     }
-    .look2-1{
-        width: 100%;
-        margin: 0 auto;
-    }     
+
     .look2-2{
         width: calc(530.94 / c.$spw) * 100%;
         margin: calc(56 / c.$spw) * 100% 0 0 calc(48 / c.$spw) * 100%;
@@ -120,33 +176,27 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        margin:0 0 calc(161.6 / c.$spw) * 100% calc(78.9 / c.$spw) * 100%;
+        margin:0 0 calc(161.6 / c.$spw) * 100% 0;
+        padding-left: calc(78.9 / c.$spw) * 100%;
+        width: 100%;
     }
 }
 
 
 .sec_3{
     
-    margin-top: calc(104.5 / c.$spw) * 100%;
+    margin-top: calc(100.5 / c.$spw) * 100%;
     .look_ph{
         position: sticky;
         top: 0;
     }
-    .look3-1{
-        width: 100%;
-        margin: 0 auto;
-    }   
-    .look3-2{
-        width: calc(528 / c.$spw) * 100%;
-
-    }   
       
 }
 
 
 
 .sec_4{
-    margin-top: calc(110 / c.$spw) * 100%;
+    margin-top: calc(100 / c.$spw) * 100%;
     .look4-1{
         width: calc(592 / c.$spw) * 100%;
         margin: 0 auto;
@@ -187,6 +237,14 @@
 }
 .sec_7{
     margin-top: calc(124 / c.$spw) * 100%;
+    margin-bottom: calc(189 / c.$spw) * 100%;
+    .num{
+        @include pc{
+            position: inherit;
+            padding-top: 0;
+            padding-bottom: calc(33.5 / c.$main) * 100%;
+        }
+    }
     .look_ph{
         position: sticky;
         top: 0;
@@ -200,14 +258,61 @@
 }
 
 
-.sec_8{
-    .num{
-        padding-top: calc(158.7 / c.$spw) * 100%;  
-        margin-left: calc(44.6 / c.$spw) * 100%;  
+.sp_movie{
+    overflow: hidden;
+    .loop_txt{
+        width: 100%;
+        margin: auto 0 0;
+        font-size: 40px;
+        line-height: 1em;
+        display: flex;
+        justify-content: center;
+        white-space: nowrap;
+        color: c.$pink;
+        line-height: 1;
+        font-weight: 400;
+        
+        
+        &.border{
+            animation: txt-right 10s infinite linear 1s both;
+            font-size: calc(38 / c.$spw * 100vw);
+            @include pc{
+                font-size: min(calc(55 / c.$pcw * 100vw),22.5px);
+            }
+        }
+        &.yuw{
+            animation: txt-left 10s infinite linear 1s both;
+            font-size: calc(33 / c.$spw * 100vw);
+            padding-bottom: 2px;
+            @include pc{
+                font-size: calc(29 / c.$pcw * 100vw);
+            }
+        }
     }
-    .ph_wrap{
-        padding-top: calc(130 / c.$spw) * 100%;
+    .footer_movie{
+        width: calc(640 / c.$spw) * 100%;
+        margin: calc(24/ c.$spw) * 100% auto;
     }
+    
+    @keyframes txt-left {
+        from {
+            transform: translateX(0)
+        }
+    
+        to {
+            transform: translateX(-100%)
+        }
+    }
+    @keyframes txt-right {
+        from {
+            transform: translateX(0)
+        }
+    
+        to {
+            transform: translateX(100%)
+        }
+    }
+    
 }
 
 .caption{
@@ -219,4 +324,36 @@
         font-size: calc(25 / c.$pcw * 100vw);
         
     }
+}
+
+
+video{
+    width: 100%;
+}
+
+// video
+.video{
+    position: relative;
+    &:before {
+        aspect-ratio: 1 / 1;
+        background-image: url(../img/off.png);
+        background-size: 100% 100%;
+        bottom: 0;
+        content: "";
+        right: 0;
+        margin-bottom: calc(30 / c.$spw) * 100%;
+        margin-right: calc(30 / c.$spw) * 100%;
+        pointer-events: none;
+        position: absolute;
+        width: calc(100 / c.$spw) * 100%;
+        @include pc{
+            width: calc(116.38 / c.$main) * 100%;
+            margin-bottom: calc(37.5 / c.$main) * 100%;
+        margin-right: calc(37.25 / c.$main) * 100%;
+        }
+    }
+}
+
+.video:has(video.unmuted):before {
+    background-image: url(../img/on.png);
 }
