@@ -26,6 +26,9 @@
     white-space: nowrap;
     color: c.$pink;
     font-weight: 400;
+    a{
+        color: c.$pink;
+    }
 }
 .line{
     position: fixed;

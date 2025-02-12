@@ -21,7 +21,7 @@
         opacity: 1;
         transition: opacity .5s ease;
         @include pc{
-            font-size: min(calc(55 / c.$pcw * 100vw),27.5px);
+            font-size: min(calc(48 / c.$pcw * 100vw),24px);
         }
         &.fadeout{
             opacity: 0;
@@ -45,8 +45,13 @@
                 font-size: calc(27 / c.$spw * 100vw);
                 line-height: calc(55 / 32);
                 color: c.$pink;
+                opacity: 1;
+                transition: opacity .3s ease;
                 @include pc{
                     font-size: min(calc(32 / c.$pcw * 100vw),16px);
+                }
+                &:hover{
+                    opacity: 0.5;
                 }
             }
         }

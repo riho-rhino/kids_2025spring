@@ -178,6 +178,9 @@
             font-weight: 400;
             white-space: nowrap;
             line-height: 1;
+            a{
+                color: c.$pink;
+            }
             @include pc{
                 font-size: min(calc(56.68 / c.$pcw * 100vw),28px);
             }
