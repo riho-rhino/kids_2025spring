@@ -8,7 +8,7 @@ $main: 1342;
 
 body{
     font-family: "Roboto", serif;
-    font-weight: 200;
+    font-weight: 400;
     font-style: normal;
     
     &.noscroll{
@@ -37,13 +37,12 @@ $pink : #FC5BD4;
 .en{
     font-family: "Roboto", serif;
     font-optical-sizing: auto;
-    font-weight: 300;
     font-style: normal;
     font-variation-settings:"wdth" 100;
 }
 
 .ja{
-    font-family: zen-kaku-gothic-antique, sans-serif;
+    font-family: "zen-kaku-gothic-new", sans-serif;
     font-weight: 400;
     font-style: normal;
 }

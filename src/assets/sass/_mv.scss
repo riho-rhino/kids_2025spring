@@ -52,7 +52,7 @@ body{
     h2{
         padding-top: calc(24.7 / c.$spw) * 100%;
         font-size: calc(33 / c.$spw * 100vw);
-        font-weight: 500;
+        line-height: 1;
         @include pc{
             padding-top: calc(36.67 / c.$main) * 100%;
             font-size: min(calc(40 / c.$pcw * 100vw),20px);
@@ -70,6 +70,8 @@ body{
         transform: translate(-50%,-50%);
         opacity: 0;
         white-space: nowrap;
+        width: 100%;
+        text-align: center;
         @include pc{
             display: none;
         }
@@ -80,11 +82,9 @@ body{
         position: absolute;
         bottom: 0;
         right: 0;
-        width: calc(25.33 / c.$spw) * 100%;
+        width: calc(41.01 / c.$spw) * 100%;
         margin: 0 calc(22.5 / c.$spw) * 100% calc(43.5 / c.$spw) * 100%;
-        @include pc{
-            transition:opacity 1s 1s ease;
-        }
+        
     }
 }
 
@@ -94,7 +94,7 @@ body{
     0%{
         opacity: 0;
     }
-    40%,80%{
+    30%,75%{
         opacity: 1;
     }
     100%{
@@ -129,15 +129,20 @@ body{
         margin-top: calc(41 / c.$spw) * 100%;
         line-height: calc(40 / 27);
         font-size: calc(27 / c.$spw * 100vw);
+        letter-spacing: 0.05em;
         @include pc{
+            line-height: calc(47 / 27);
             font-size: min(calc(27 / c.$pcw * 100vw),13.5px);
         }
     }
     .en_lead{
         font-size: calc(24 / c.$spw * 100vw);
-        line-height: calc(35.1 / 26.57);
+        line-height: calc(37 / 24);
         margin-top: calc(26.57 / c.$spw) * 100%;
+        font-weight: 300;
         @include pc{
+            line-height: calc(42 / 25);
+            margin-top: calc(65.9 / c.$main) * 100%;
             font-size: min(calc(25 / c.$pcw * 100vw),12.5px);
         }
     }

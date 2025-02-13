@@ -21,7 +21,7 @@ function tick(time) {
 async function opning() {
     $body.addClass('noscroll');
     $body.addClass('start');
-    await tick(500);
+    await tick(650);
     $('.header').addClass('start')
     $('.pc-wrap').addClass('start')
     $('.pc-anchor_wrap').addClass('start')
@@ -36,6 +36,7 @@ const swiper = new Swiper('.swiper', {
     slidesPerView: 1.6,
     spaceBetween: 5,
     loop: true,
+    speed: 650,
     autoplay:{
         delay: 2500,
     },
