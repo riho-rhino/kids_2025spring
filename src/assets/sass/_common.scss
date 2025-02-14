@@ -49,9 +49,11 @@ $pink : #FC5BD4;
 
 .fadein{
     opacity: 0;
-    transition: opacity .8s ease;
+    filter: blur(6px);
+    transition: all 1s ease;
     &.in{
         opacity: 1;
+        filter: blur(0);
     }
 }
 

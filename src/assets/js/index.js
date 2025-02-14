@@ -1,7 +1,4 @@
 import $ from "jquery"
-// swiper
-import Swiper from 'swiper';
-import { Autoplay} from 'swiper/modules';
 
 
 var $win = $(window);
@@ -30,17 +27,6 @@ async function opning() {
 }
 
 
-
-const swiper = new Swiper('.swiper', {
-    modules: [Autoplay],
-    slidesPerView: 1.6,
-    spaceBetween: 5,
-    loop: true,
-    speed: 650,
-    autoplay:{
-        delay: 2500,
-    },
-  });
 
 
 // LOOKをfedeoutさせる
@@ -94,7 +80,7 @@ $(window).on("scroll", function() {
         fadeInElements.each(function() {
             var element = $(this);
             var offset = element.offset().top;
-            if (scrollTop + windowHeight * 0.7 > offset && !element.hasClass("in")) {
+            if (scrollTop + windowHeight * 0.6 > offset && !element.hasClass("in")) {
                 element.addClass("in"); 
             }
         });

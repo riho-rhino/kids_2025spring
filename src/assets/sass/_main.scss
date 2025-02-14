@@ -170,7 +170,7 @@
 
     .look2-2{
         width: calc(530.94 / c.$spw) * 100%;
-        margin: calc(56 / c.$spw) * 100% 0 0 calc(48 / c.$spw) * 100%;
+        margin: calc(56 / c.$spw) * 100% 0 0 0;
     }     
     .look2-3{
         position: absolute;
@@ -196,13 +196,17 @@
         position: sticky;
         top: 0;
     }
+
+    .look3-3{
+        margin-top: calc(78.3 / c.$spw) * 100%;
+    }
       
 }
 
 
 
 .sec_4{
-    margin-top: calc(137 / c.$spw) * 100%;
+    margin-top: calc(100 / c.$spw) * 100%;
     .look4-1{
         width: calc(592 / c.$spw) * 100%;
         margin: 0 auto;
@@ -266,10 +270,37 @@
             padding-top: calc(90 / c.$main) * 100%;
         }
     }
-    .look_ph{
-        position: sticky;
-        top: 0;
-    }
+
+    @keyframes infinity-scroll-left {
+        from {
+          transform: translateX(0);
+        }
+          to {
+          transform: translateX(-100%);
+        }
+        }
+        .scroll-infinity__wrap {
+          display: flex;
+          overflow: hidden;
+        }
+        .scroll-infinity__list {
+          display: flex;
+          list-style: none;
+          padding: 0
+        }
+        .scroll-infinity__list--left {
+          animation: infinity-scroll-left 40s infinite linear 0.5s both;
+        }
+        .scroll-infinity__item {
+          width: 300px;
+          padding-right: 5px;
+          @include pc{
+            width: 420px;
+          }
+        }
+        .scroll-infinity__item>img {
+          width: 100%;
+        }
 
     .look7-4{
         width: calc(510 / c.$spw) * 100%;
